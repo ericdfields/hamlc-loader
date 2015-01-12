@@ -13,7 +13,7 @@
     "url": "https://github.com/ericdfields/hamlc-loader/issues"
   },
   "homepage": "https://github.com/ericdfields/hamlc-loader",
-  "devDependencies": {
+  "dependencies": {
     "haml-coffee": "^1.14.1",
     "loader-utils": "0.2.x"
   }
