@@ -1,5 +1,5 @@
-For this
+Setup your webpack config w/ the following:
 
 ````
-{ test: /\.hamlc$/, loader: "haml-coffee-loader" }
+{ test: /\.hamlc$/, loader: "html?hamlc-loader" }
 ````
