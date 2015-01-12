@@ -1,0 +1,20 @@
+{
+  "name": "hamlc-loader",
+  "version": "0.0.1",
+  "description": "hamlc loader module for webpack",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericdfields/hamlc-loader.git"
+  },
+  "author": "Eric D. Fields @ericdfields",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericdfields/hamlc-loader/issues"
+  },
+  "homepage": "https://github.com/ericdfields/hamlc-loader",
+  "devDependencies": {
+    "haml-coffee": "^1.14.1",
+    "loader-utils": "^0.2.6"
+  }
+}
