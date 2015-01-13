@@ -4,5 +4,6 @@ module.exports = function(source) {
   var hamlc = require("haml-coffee");
   var query = loaderUtils.parseQuery(this.query);
   var req = loaderUtils.getRemainingRequest(this).replace(/^!/, "");
-  return hamlc.template(source, req.match(/([^/]+)(\.html)?.haml[c]?$/)[1]);
+  var name = req.replace(/\/.*scripts\//,"").replace(/(\.html)?.haml[c]?$/,"");
+  return hamlc.template(source, name);
 }
