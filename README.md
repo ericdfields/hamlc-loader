@@ -1,6 +1,6 @@
 # Haml-Coffee (Hamlc) Loader for Webpack
 
-Import haml-coffee files as modules in your webpack project. Returns a template that can be accessed by `window.HAML['templates/my_template']`.
+Import haml-coffee files as modules in your webpack project. Returns a template that can be accessed in a global namespace (_window.HAML_ by default): `window.HAML['templates/my_template']`.
 
 ## Setup
 
@@ -40,7 +40,8 @@ will return the HTML:
 </div>
 ````
 
-## A quick note on template naming
+### A quick note on template naming
+
 The loader uses the template file path to determine the name of the function. Borrowing conventions from Rails, it:
 
 * assumes your templates live in a directory in your project named _javascripts_ or _scripts_
@@ -49,4 +50,10 @@ The loader uses the template file path to determine the name of the function. Bo
 
 So if your file path is _/Users/ericdfields/webpack/app/assets/javascripts/templates/my_template.hamlc_, your given template name is _templates/my_template_. 
 
-I'll gladly accept pull requests that expose all the [haml-coffee options](https://github.com/netzpirat/haml-coffee/#using-the-cli-tool) as configuration (ex. `require("hamlc-loader?name=someName!templates/my_template.hamlc"`)).
+## Standalone mode
+
+If you want the loader to simply return the function without appending it to the global namespace, pass the param 'placement=standalone' in your config:
+
+````
+{ test: /\.hamlc$/, loader: "hamlc-loader?placement=standalone" }
+````
