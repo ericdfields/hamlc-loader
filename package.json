@@ -1,6 +1,6 @@
 {
   "name": "hamlc-loader",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "hamlc loader module for webpack",
   "main": "index.js",
   "repository": {
