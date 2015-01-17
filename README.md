@@ -1,6 +1,6 @@
 # Haml-Coffee (Hamlc) Loader for Webpack
 
-Import haml-coffee files as modules in your webpack project. Returns a template that can be accessed in a global namespace (_window.HAML_ by default): `window.HAML['templates/my_template']`.
+Import haml-coffee files as modules in your webpack project. Returns a template function to render the template.
 
 ## Setup
 
