@@ -14,7 +14,12 @@
   },
   "homepage": "https://github.com/ericdfields/hamlc-loader",
   "dependencies": {
-    "haml-coffee": "^1.14.1",
-    "loader-utils": "0.2.x"
+    "loader-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "haml-coffee": "^1.14.1"
+  },
+  "peerDependencies": {
+    "haml-coffee": "^1.14.1"
   }
 }

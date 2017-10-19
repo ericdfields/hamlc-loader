@@ -1,20 +1,23 @@
-var loaderUtils = require("loader-utils");
+const loaderUtils = require('loader-utils');
+const hamlc = require('haml-coffee');
+
 module.exports = function(source) {
-  var hamlc, query, req, template, result;
   this.cacheable && this.cacheable(true);
-  // 
-  // Requires
-  // 
-  hamlc     = require("haml-coffee");
-  // 
-  // Loader
-  // 
-  query     = loaderUtils.parseQuery(this.query);
-  req       = loaderUtils.getRemainingRequest(this).replace(/^!/, "");
-  // 
-  // Compilation
-  // 
-  template  = hamlc.template(source, null, null, {placement: 'standalone', escapeHtml: false});
-  result    = "module.exports =" + template.toString();
-  return result;
+
+  const defaultOptions = {
+    escapeHtml: false
+  };
+
+  const loaderOptions = Object.assign({}, defaultOptions, loaderUtils.getOptions(this));
+  const loaderParams = Object.assign({}, defaultOptions,loaderUtils.parseQuery(this.resourceQuery || '?'));
+
+  // query params have priority over loader options as they are more granular
+  const options = Object.assign({}, loaderParams, loaderOptions)
+
+  const template = hamlc.template(source, null, null, {
+    placement: 'standalone',
+    escapeHtml: options.escapeHtml
+  });
+
+  return `module.exports = ${template.toString()}`;
 }
